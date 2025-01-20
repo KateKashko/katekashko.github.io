@@ -1,0 +1,137 @@
+/* Общие стили для всего документа */
+html, body {
+    font-family: 'Red Hat Display', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #e6f3f2;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Основной контейнер для секций */
+.main-container {
+    display: flex;
+    flex-direction: column; /* Вертикальное расположение секций */
+    align-items: center;
+    width: 100%;
+    gap: 40px; /* Отступы между секциями */
+    padding: 40px 20px;
+    box-sizing: border-box;
+}
+
+/* Первый контейнер: заголовок + картинка */
+.container {
+    display: flex;
+    flex-direction: row; /* Горизонтальное расположение внутри */
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    background-color: #5B9D99;
+    padding: 40px;
+    border-radius: 15px;
+    box-sizing: border-box;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Стили текста в первом контейнере */
+.text-content {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.text-content h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.text-content p {
+    font-size: 18px;
+    line-height: 1.8;
+    font-weight: 500;
+    text-align: center;
+}
+
+/* Стили изображения в первом контейнере */
+.image-content {
+    flex: 1;
+    text-align: center;
+}
+
+.image-content img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Второй контейнер: функции */
+.features-container {
+    width: 100%;
+    max-width: 1200px;
+    background-color: #ffffff;
+    color: #5B9D99;
+    text-align: center;
+    padding: 40px 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+.features-container h2 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+/* Вложенные карточки (функции) */
+.features {
+    display: flex;
+    flex-direction: row; /* Горизонтальное расположение карточек */
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap; /* Чтобы карточки переходили на новую строку на маленьких экранах */
+}
+
+.feature {
+    flex: 1;
+    max-width: 300px;
+    padding: 20px;
+    border: 2px solid #e6f3f2;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.feature img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.feature p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Адаптивность для маленьких экранов */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Переключаемся на вертикальную ориентацию */
+        text-align: center;
+    }
+
+    .text-content {
+        padding-right: 0;
+    }
+
+    .features {
+        flex-direction: column; /* Карточки одна под другой */
+        gap: 30px;
+    }
+}
+
