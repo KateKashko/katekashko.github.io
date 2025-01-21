@@ -3,7 +3,7 @@ html, body {
     font-family: 'Red Hat Display', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #e6f3f2;
+    background-color: #ffffff;
     color: #fff;
     display: flex;
     flex-direction: column;
@@ -16,24 +16,36 @@ html, body {
     flex-direction: column; /* Вертикальное расположение секций */
     align-items: center;
     width: 100%;
-    gap: 40px; /* Отступы между секциями */
-    padding: 40px 20px;
+    /* gap: 40px; */
     box-sizing: border-box;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #5B9D99;
 }
 
 /* Первый контейнер: заголовок + картинка */
-.container {
+.container,  .features-container, .priority-container, .feedback-container {
     display: flex;
-    flex-direction: row; /* Горизонтальное расположение внутри */
+    flex-direction: column; /* Горизонтальное расположение внутри */
     align-items: center;
     justify-content: space-between;
     width: 100%;
     max-width: 1200px;
-    background-color: #5B9D99;
+    background-color: #ffffff;
     padding: 40px;
-    border-radius: 15px;
     box-sizing: border-box;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+    background-color: #5B9D99;
+    color: #fff;
+    flex-direction: row;
 }
 
 /* Стили текста в первом контейнере */
@@ -69,21 +81,8 @@ html, body {
 
 /* Второй контейнер: функции */
 .features-container {
-    width: 100%;
-    max-width: 1200px;
-    background-color: #ffffff;
     color: #5B9D99;
     text-align: center;
-    padding: 40px 20px;
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    box-sizing: border-box;
-}
-
-.features-container h2 {
-    font-size: 28px;
-    font-weight: 700;
-    margin-bottom: 30px;
 }
 
 /* Вложенные карточки (функции) */
@@ -103,6 +102,7 @@ html, body {
     border-radius: 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     background-color: #ffffff;
+    color: #26353B;
     text-align: center;
 }
 
@@ -118,20 +118,56 @@ html, body {
     line-height: 1.6;
 }
 
+/* Общие стили для секций */
+.priority,
+.feedback {
+    display: flex;
+    flex-direction: row; /* Горизонтальное расположение текста и изображения */
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+    background-color: #ffffff;
+    padding: 40px 0px;
+    max-width: 1200px;
+    width: 100%;
+    margin: 20px auto; /* Отступы между секциями */
+}
+
+/* Для изображения */
+.priority-container img,
+.feedback-container img {
+    width: 200px; /* Фиксированная ширина */
+    height: auto;
+}
+
+/* Для текста */
+.priority-container p,
+.feedback-container p {
+    flex: 1;
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 0;
+    text-align: center;
+    color: #26353B;
+}
+
 /* Адаптивность для маленьких экранов */
 @media (max-width: 768px) {
-    .container {
-        flex-direction: column; /* Переключаемся на вертикальную ориентацию */
+    .priority-container,
+    .feedback-container {
+        flex-direction: column; /* Вертикальная ориентация */
         text-align: center;
     }
 
-    .text-content {
-        padding-right: 0;
+    .priority-container img,
+    .feedback-container img {
+        margin-bottom: 20px; /* Отступ под изображением */
     }
 
-    .features {
-        flex-direction: column; /* Карточки одна под другой */
-        gap: 30px;
-    }
+    /* .priority-container p,
+    .feedback-container p {
+        text-align: center;
+    } */
 }
+
 
