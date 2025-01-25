@@ -194,21 +194,22 @@ h2 {
 
 /* Адаптивность для маленьких экранов */
 @media (max-width: 768px) {
+    .container,
+    .features-container,
     .priority-container,
     .feedback-container {
-        flex-direction: column; /* Вертикальная ориентация */
-        text-align: center;
+        padding: 20px;
+    }
+    .container,
+    .features {
+        flex-direction: column;
     }
 
-    .priority-container img,
-    .feedback-container img {
-        margin-bottom: 20px; /* Отступ под изображением */
+    .priority,
+    .feedback {
+        flex-direction: column;
+        gap: 20px;
     }
-
-    /* .priority-container p,
-    .feedback-container p {
-        text-align: center;
-    } */
 }
 
 
